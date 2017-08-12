@@ -36,7 +36,6 @@ int main(void)
 				bankHandler.printMembers();
 				break;
 			case 5:
-				bankHandler.resourceTerminate();
 				break;
 			default:
 				cout << "message : invalid menu number" << endl;

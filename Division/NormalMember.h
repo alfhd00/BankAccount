@@ -27,12 +27,6 @@ class NormalMember : public Member
 			cin >> interestRatio;
 		}
 
-		virtual NormalMember& operator=(const NormalMember& nm)
-		{
-			//Member::operator=(nm);
-			interestRatio = nm.interestRatio;
-		}
-
 		//overriding
 		virtual bool input(int money)
 		{

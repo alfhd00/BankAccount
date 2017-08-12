@@ -20,12 +20,6 @@ class HighCreditMember : public NormalMember
 		}
 		//굳이 선언해줄 이유는 없긴함
 		
-		virtual HighCreditMember& operator= (const HighCreditMember& cm)
-		{
-			//NormalMember::operator=(cm);
-			gradeCredit = cm.gradeCredit;
-		}
-
 		//overriding
 		virtual void createBankAccount()
 		{

@@ -1,6 +1,6 @@
 #ifndef __BANK_HANDLER_H__
 #define __BANK_HANDLER_H__
-//#include "HighCreditMember.h"
+//#include "HighCreditMember.h
 #include "Array.h"
 
 class accountHandler
@@ -34,6 +34,5 @@ class accountHandler
 
 		void printMembers();
 
-		void resourceTerminate();
 };
 #endif

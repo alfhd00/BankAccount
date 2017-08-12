@@ -3,38 +3,15 @@
 
 void Member::createBankAccount(void)
 {
-	int len;
-
-	char account_signal_number[30];
 	cout << "[Create account]" << endl;
 	cout << "1. account signal number: ";
-	cin >> account_signal_number;
+	cin >> this->account_signal_number;
 
-	len = strlen(account_signal_number)+1;
-	this->account_signal_number = new char[len];
-	strcpy(this->account_signal_number, account_signal_number);
-
-	char user_name[30];
 	cout << "2. user name : ";
-	cin >>  user_name;
-
-	len = strlen(user_name)+1;
-	this->user_name = new char[len];
-	strcpy(this->user_name, user_name);
+	cin >>  this->user_name;
 
 	cout <<"3. account : ";
 	cin >> this->account;
-}
-
-Member& Member::operator=(const Member& member)
-{
-	account_signal_number = new char[strlen(member.account_signal_number)+1];
-	strcpy(account_signal_number, member.account_signal_number);
-
-	user_name = new char[strlen(member.user_name)+1];
-	strcpy(user_name, member.user_name);
-
-	account = member.account;
 }
 
 bool Member::input(int money)
@@ -46,30 +23,34 @@ bool Member::input(int money)
 	return true;
 }
 
-bool Member::output(int money) const
+bool Member::output(int money)
 {
 	if(money > account) return false;
-	else
-		return account;
+	
+	account -= money;
+	return true;
 }
 
 
-void Member::printMemberInfo() const
+void Member::printMemberInfo() 
 {
-	cout << "[Account number] : " << account_signal_number << endl;
-	cout << "[User name] : " << user_name << endl;
-	cout << "[Account] : " << account << endl;
+	cout << "[Account number] : ";
+	cout << account_signal_number << endl;
+	cout << "[User name] : ";
+	cout << user_name << endl;
+	cout << "[Account] : ";
+	cout << account << endl;
 
 	cout << endl;
 }
 
 //getter, setter method
-char * Member::get_account_sign_number() const
+String& Member::get_account_sign_number() 
 {
 	return account_signal_number;
 }
 
-char * Member::get_user_name() const
+String& Member::get_user_name() 
 {
 	return user_name;
 }

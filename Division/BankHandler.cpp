@@ -15,7 +15,7 @@ bool accountHandler::createBankAccount()
 	cout << "1. Normal account 2. High credit account 3. Default account" << endl;
 	
 	cout << "choice : ";
-	std::cin >> choice;
+	cin >> choice;
 
 	switch(choice)
 	{
@@ -35,14 +35,14 @@ bool accountHandler::createBankAccount()
 
 bool accountHandler::accountInput()
 {
-	char accountNum[30];
+	String accountNum;
 
 	cout << "bank account sign number : ";
 	cin >> accountNum;
 
 	for(int i=0; i<count; i++)
 	{
-		if(strcmp(list[i]->get_account_sign_number(), accountNum) == 0)
+		if(list[i]->get_account_sign_number() == accountNum)
 		{
 			int money = 0;
 
@@ -61,14 +61,14 @@ bool accountHandler::accountInput()
 
 bool accountHandler::accountOutput()
 {
-	char accountNum[30];
+	String accountNum;
 
 	cout << "bank account sign number : ";
 	cin >> accountNum;
 
 	for(int i=0; i<count; i++)
 	{
-		if(strcmp(list[i]->get_account_sign_number(), accountNum) == 0)
+		if(list[i]->get_account_sign_number() == accountNum)
 		{
 			int money = 0;
 
@@ -91,12 +91,4 @@ void accountHandler::printMembers()
 	for(int i=0; i<count; i++) list[i]->printMemberInfo();
 }
 
-void accountHandler::resourceTerminate()
-{
-	for(int i=0; i<count; i++)
-	{
-		delete list[i]->get_account_sign_number();
-		delete list[i]->get_user_name();
-	}
-}
 
