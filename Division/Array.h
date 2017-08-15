@@ -7,12 +7,11 @@
 using std::cout;
 using std::endl;
 
-typedef Member * MEM_PTR;
-
+template <class T>
 class Array
 {
 	private:
-		MEM_PTR * arr;
+		T * arr;
 		int arrlen;
 
 		Array(const Array& arr) {}
@@ -21,10 +20,10 @@ class Array
 	public:
 		Array(int arrlen = 50) : arrlen(arrlen)
 		{
-			arr = new MEM_PTR[arrlen];
+			arr = new T[arrlen];
 		}
 
-		MEM_PTR& operator[] (int idx)
+		T& operator[] (int idx)
 		{
 			if(idx < 0 || idx >= arrlen)
 			{

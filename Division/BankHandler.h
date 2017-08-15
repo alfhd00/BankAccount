@@ -3,10 +3,12 @@
 //#include "HighCreditMember.h
 #include "Array.h"
 
+typedef Member * MEM_PTR;
+
 class accountHandler
 {
 	private:
-		Array list;
+		Array<MEM_PTR> list;
 		int count;
 
 	public:
@@ -20,7 +22,7 @@ class accountHandler
 			return list.operator[](idx);
 		}
 
-		Array& operator=(Member* member)
+		Array<MEM_PTR>& operator=(Member* member)
 		{
 			list[count++] = member;
 			return list;
